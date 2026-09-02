@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Clima em Cruzeiro - SP | Weather Dashboard</title>
+
+    <meta
+        name="description"
+        content="Consulte a temperatura atual, máxima, mínima e probabilidade de chuva em Cruzeiro - SP."
+    >
+
+    <meta
+        name="keywords"
+        content="clima Cruzeiro SP, previsão do tempo Cruzeiro, temperatura Cruzeiro, weather dashboard"
+    >
+
+    <meta name="author" content="Guilherme Farias">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <header class="cabecalho">
+
+            <div>
+                <p class="titulo-pequeno">WEATHER DASHBOARD</p>
+                <h1>Cruzeiro, SP</h1>
+            </div>
+
+            <p class="data" id="data"></p>
+
+        </header>
+
+
+        <section class="clima-principal">
+
+            <p class="temperatura" id="temperatura">
+                --°C
+            </p>
+
+            <p class="condicao" id="condicao">
+                Carregando...
+            </p>
+
+        </section>
+
+
+        <section class="informacoes">
+
+            <div class="card">
+
+                <p class="card-titulo">
+                    MÁXIMA
+                </p>
+
+                <p class="card-valor" id="maxima">
+                    --°C
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <p class="card-titulo">
+                    MÍNIMA
+                </p>
+
+                <p class="card-valor" id="minima">
+                    --°C
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <p class="card-titulo">
+                    CHANCE DE CHUVA
+                </p>
+
+                <p class="card-valor" id="chuva">
+                    --%
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="previsao-horaria">
+
+            <h2>Previsão por hora</h2>
+
+            <div class="horarios" id="horarios">
+            </div>
+        </section>
+
+    </main>
+    
+    <script src="script.js"></script>
+
+</body>
+
+</html>
