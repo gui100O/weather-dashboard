@@ -1,118 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Clima em Cruzeiro - SP | Weather Dashboard</title>
-
-    <meta
-        name="description"
-        content="Consulte a temperatura atual, máxima, mínima e probabilidade de chuva em Cruzeiro - SP."
-    >
-
-    <meta
-        name="keywords"
-        content="clima Cruzeiro SP, previsão do tempo Cruzeiro, temperatura Cruzeiro, weather dashboard"
-    >
-
-    <meta name="author" content="Guilherme Farias">
-
-    <meta name="robots" content="index, follow">
-
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8db8ff">
+  <meta name="description" content="Consulte as condições atuais e a previsão do tempo em Cruzeiro, SP, com dados da Open-Meteo.">
+  <meta name="keywords" content="clima Cruzeiro SP, previsão do tempo Cruzeiro, temperatura Cruzeiro, weather dashboard">
+  <meta name="author" content="Guilherme Farias">
+  <meta name="robots" content="index, follow">
+  <title>Clima em Cruzeiro — Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=League+Spartan:wght@500;600;700;800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="dashboard">
+    <header class="cabecalho">
+      <a class="brand" href="#" aria-label="Weather Dashboard início">W<span>.</span></a>
+      <div class="brand-copy">
+        <p class="titulo-pequeno">WEATHER / FIELD NOTES</p>
+        <h1>Cruzeiro<span>, SP</span></h1>
+      </div>
+      <div class="header-right">
+        <span class="live-dot"></span><span class="live-label">DADOS AO VIVO</span>
+        <p class="data" id="data">CARREGANDO DATA...</p>
+      </div>
+    </header>
 
-    <main class="dashboard">
+    <section class="hero-weather" aria-labelledby="temperatura">
+      <div class="hero-weather-copy">
+        <p class="section-label"><span>01</span> / AGORA NA SUA CIDADE</p>
+        <p class="temperature" id="temperatura">--<span>°C</span></p>
+        <p class="condition" id="condicao" aria-live="polite">Buscando condições atuais...</p>
+        <p class="location-note">LAT 22.58° S <span>·</span> LONG 44.96° W</p>
+      </div>
+      <div class="weather-art" aria-hidden="true">
+        <div class="sun-halo"></div><div class="sun-core"></div>
+        <div class="cloud cloud-one"><i></i><i></i><i></i></div>
+        <div class="cloud cloud-two"><i></i><i></i><i></i></div>
+        <span class="spark spark-one">✳</span><span class="spark spark-two">✳</span>
+        <span class="art-caption">THE SKY<br>ABOVE US</span>
+      </div>
+    </section>
 
-        <header class="cabecalho">
+    <section class="metrics" aria-label="Resumo do clima">
+      <article class="metric metric-high"><p class="metric-label">MÁXIMA DO DIA <span>↗</span></p><p class="metric-value" id="maxima">--°C</p><p class="metric-note">Temperatura prevista</p></article>
+      <article class="metric metric-low"><p class="metric-label">MÍNIMA DO DIA <span>↘</span></p><p class="metric-value" id="minima">--°C</p><p class="metric-note">Temperatura prevista</p></article>
+      <article class="metric metric-rain"><p class="metric-label">CHANCE DE CHUVA <span>〰</span></p><p class="metric-value" id="chuva">--%</p><p class="metric-note">Probabilidade máxima</p></article>
+    </section>
 
-            <div>
-                <p class="titulo-pequeno">WEATHER DASHBOARD</p>
-                <h1>Cruzeiro, SP</h1>
-            </div>
-
-            <p class="data" id="data"></p>
-
-        </header>
-
-
-        <section class="clima-principal">
-
-            <p class="temperatura" id="temperatura">
-                --°C
-            </p>
-
-            <p class="condicao" id="condicao">
-                Carregando...
-            </p>
-
-        </section>
-
-
-        <section class="informacoes">
-
-            <div class="card">
-
-                <p class="card-titulo">
-                    MÁXIMA
-                </p>
-
-                <p class="card-valor" id="maxima">
-                    --°C
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <p class="card-titulo">
-                    MÍNIMA
-                </p>
-
-                <p class="card-valor" id="minima">
-                    --°C
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <p class="card-titulo">
-                    CHANCE DE CHUVA
-                </p>
-
-                <p class="card-valor" id="chuva">
-                    --%
-                </p>
-
-            </div>
-
-        </section>
-
-        <section class="previsao-horaria">
-
-            <h2>Previsão por hora</h2>
-
-            <div class="horarios" id="horarios">
-            </div>
-        </section>
-
-    </main>
-    
-    <script src="script.js"></script>
-
+    <section class="previsao-horaria">
+      <div class="forecast-heading"><div><p class="section-label"><span>02</span> / PLANEJE SEU DIA</p><h2>O tempo, <em>hora a hora.</em></h2></div><p class="forecast-hint">PRÓXIMAS 12 HORAS <span>→</span></p></div>
+      <div class="horarios" id="horarios" aria-live="polite"><p class="loading-state">Carregando previsão horária...</p></div>
+    </section>
+    <p class="source-note"><span>✳</span> PREVISÃO FORNECIDA PELA OPEN-METEO <span class="source-separator">/</span> ATUALIZADA AUTOMATICAMENTE</p>
+    <footer class="footer"><span>WEATHER DASHBOARD <b>© <span id="year">2026</span></b></span><span>FEITO PARA CRUZEIRO, SP <span class="footer-mark">↗</span></span></footer>
+  </main>
 </body>
-
 </html>
