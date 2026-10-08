@@ -1,253 +1,59 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-body {
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: #0d0d0d;
-
-    color: #ffffff;
-
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-
-.dashboard {
-    width: min(900px, 90%);
-
-    padding: 50px;
-
-    border: 1px solid #2a2a2a;
-    border-radius: 24px;
-
-    background-color: #141414;
-}
-
-
-/* CABEÇALHO */
-
-.cabecalho {
-    display: flex;
-
-    justify-content: space-between;
-    align-items: flex-start;
-
-    padding-bottom: 40px;
-
-    border-bottom: 1px solid #2a2a2a;
-}
-
-
-.titulo-pequeno {
-    margin-bottom: 8px;
-
-    font-size: 12px;
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    color: #888888;
-}
-
-
-.cabecalho h1 {
-    font-size: 32px;
-    font-weight: 500;
-}
-
-
-.data {
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    color: #666666;
-}
-
-
-/* CLIMA PRINCIPAL */
-
-.clima-principal {
-    text-align: center;
-
-    padding: 70px 0;
-}
-
-
-.temperatura {
-    font-size: 110px;
-    font-weight: 300;
-
-    letter-spacing: -6px;
-}
-
-
-.condicao {
-    margin-top: 10px;
-
-    font-size: 18px;
-
-    color: #999999;
-}
-
-
-/* CARDS */
-
-.informacoes {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 15px;
-}
-
-
-.card {
-    padding: 25px;
-
-    border: 1px solid #292929;
-    border-radius: 16px;
-
-    background-color: #191919;
-}
-
-
-.card-titulo {
-    margin-bottom: 15px;
-
-    font-size: 11px;
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    color: #777777;
-}
-
-
-.card-valor {
-    font-size: 28px;
-    font-weight: 500;
-}
-
-@media (max-width: 768px) {
-
-    body {
-        align-items: flex-start;
-        padding: 20px 0;
-    }
-
-    .dashboard {
-        width: 94%;
-        padding: 30px 20px;
-        border-radius: 18px;
-    }
-
-    .cabecalho {
-        flex-direction: column;
-        gap: 15px;
-        padding-bottom: 30px;
-    }
-
-    .cabecalho h1 {
-        font-size: 28px;
-    }
-
-    .data {
-        font-size: 11px;
-    }
-
-    .clima-principal {
-        padding: 50px 0;
-    }
-
-    .temperatura {
-        font-size: 80px;
-        letter-spacing: -4px;
-    }
-
-    .condicao {
-        font-size: 16px;
-    }
-
-    .informacoes {
-        grid-template-columns: 1fr;
-    }
-
-    .card {
-        padding: 20px;
-    }
-
-    .card-valor {
-        font-size: 24px;
-    }
-}
-
-.previsao-horaria {
-    margin-top: 50px;
-}
-
-
-.previsao-horaria h2 {
-    margin-bottom: 20px;
-
-    font-size: 16px;
-    font-weight: 500;
-
-    color: #aaaaaa;
-}
-
-
-.horarios {
-    display: flex;
-
-    gap: 12px;
-
-    overflow-x: auto;
-
-    padding-bottom: 10px;
-}
-
-
-.horario {
-    min-width: 130px;
-
-    padding: 20px;
-
-    border: 1px solid #292929;
-    border-radius: 16px;
-
-    background-color: #191919;
-
-    text-align: center;
-}
-
-
-.horario-hora {
-    margin-bottom: 15px;
-
-    font-size: 12px;
-
-    color: #777777;
-}
-
-
-.horario-temperatura {
-    margin-bottom: 8px;
-
-    font-size: 28px;
-}
-
-
-.horario-condicao {
-    font-size: 12px;
-
-    color: #888888;
-}
+:root{--ink:#17263a;--blue:#8db8ff;--paper:#e1ebff;--white:#f6f8ff;--orange:#ffb75e;--muted:#61718a;--line:#17263a25;--display:'League Spartan',sans-serif;--body:'Montserrat',sans-serif;--mono:'DM Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{min-height:100vh;background:var(--blue);color:var(--ink);font-family:var(--body);padding:42px 20px;overflow-x:hidden}
+.grain{position:fixed;inset:0;pointer-events:none;opacity:.04;z-index:5;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
+.dashboard{position:relative;z-index:1;width:min(1020px,100%);margin:0 auto;padding:clamp(22px,5vw,56px);background:var(--paper);border:1px solid #fff8;box-shadow:15px 15px 0 #34547a1a}
+.cabecalho{display:flex;align-items:center;gap:17px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.brand{display:grid;place-items:center;width:47px;height:47px;flex-shrink:0;background:var(--ink);color:var(--white);font:800 27px/.8 var(--display);text-decoration:none;letter-spacing:-2px}
+.brand span{color:var(--orange)}
+.brand-copy{flex:1}
+.titulo-pequeno,.live-label,.data,.section-label,.location-note,.metric-label,.metric-note,.forecast-hint,.source-note,.footer{font-family:var(--mono);letter-spacing:.8px}
+.titulo-pequeno{font-size:9px;color:var(--muted);margin-bottom:4px}
+.cabecalho h1{font:700 32px/.95 var(--display);letter-spacing:-.7px}
+.cabecalho h1 span{color:#6b87b1}
+.header-right{text-align:right}
+.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#648d45;margin-right:7px;box-shadow:0 0 0 4px #648d451b}
+.live-label{font-size:8px;color:#4c703a}
+.data{margin-top:8px;color:var(--muted);font-size:9px}
+.hero-weather{display:grid;grid-template-columns:1fr .8fr;align-items:center;min-height:320px;padding:35px 0 30px;border-bottom:1px solid var(--line)}
+.section-label{font-size:9px;color:var(--muted)}
+.section-label span{color:#d96a4b}
+.temperature{font:800 clamp(92px,13vw,148px)/.8 var(--display);letter-spacing:-9px;margin:35px 0 17px}
+.temperature span{font-size:.43em;letter-spacing:-2px;color:#5c7cad;vertical-align:top}
+.condition{font-size:14px;font-weight:600}
+.location-note{font-size:8px;color:var(--muted);margin-top:24px}
+.location-note span{color:#d96a4b;padding:0 5px}
+.weather-art{height:255px;position:relative;display:grid;place-items:center;overflow:hidden}
+.sun-halo{position:absolute;width:205px;height:205px;border:1px solid #ffb75e70;border-radius:50%;box-shadow:0 0 0 18px #ffb75e1c,0 0 0 38px #ffb75e13}
+.sun-core{position:absolute;width:130px;height:130px;border-radius:50%;background:var(--orange);box-shadow:0 15px 35px #c88a3a24}
+.cloud{position:absolute;width:110px;height:33px;border-radius:30px;background:#f9fbff;box-shadow:0 5px 0 #34547a10}
+.cloud i{position:absolute;bottom:8px;width:44px;height:44px;border-radius:50%;background:inherit}
+.cloud i:nth-child(1){left:13px}.cloud i:nth-child(2){left:37px;bottom:15px;width:55px;height:55px}.cloud i:nth-child(3){right:0}
+.cloud-one{top:68px;right:16px;transform:rotate(-9deg)}.cloud-two{bottom:53px;left:5px;transform:scale(.7) rotate(8deg);background:#d0e0ff}
+.spark{position:absolute;font-size:25px;color:#526f9d}.spark-one{top:24px;left:45px}.spark-two{bottom:26px;right:37px;color:#d96a4b}
+.art-caption{position:absolute;right:0;bottom:8px;font:9px/1.3 var(--mono);letter-spacing:1px;text-align:right;color:#61718a}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;padding:25px 0 36px}
+.metric{min-height:130px;padding:20px;background:#f5f8ff;border:1px solid #17263a14}
+.metric-high{border-top:3px solid #ffb75e}.metric-low{border-top:3px solid #8db8ff}.metric-rain{border-top:3px solid #8b9cc5}
+.metric-label{display:flex;justify-content:space-between;gap:8px;font-size:8px;color:var(--muted)}
+.metric-label span{font-size:15px;color:#d96a4b}
+.metric-value{font:700 39px/.9 var(--display);margin-top:22px;letter-spacing:-1px}
+.metric-note{font-size:8px;color:var(--muted);margin-top:8px}
+.forecast-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:23px}
+.forecast-heading h2{font:700 clamp(31px,5vw,46px)/.95 var(--display);letter-spacing:-1.2px;margin-top:12px}
+.forecast-heading h2 em{font-style:normal;color:#6886b7}
+.forecast-hint{font-size:8px;color:var(--muted);white-space:nowrap}.forecast-hint span{color:#d96a4b;margin-left:5px}
+.horarios{display:grid;grid-auto-columns:minmax(105px,1fr);grid-auto-flow:column;gap:9px;overflow-x:auto;padding:3px 3px 13px;scrollbar-color:#91a9ce transparent;scrollbar-width:thin}
+.horario{min-width:0;padding:17px 12px;background:#f6f8ff;border:1px solid #17263a15;text-align:center;transition:transform .2s,border-color .2s}
+.horario:hover{transform:translateY(-4px);border-color:#8aa8d7}
+.horario-hora{font:9px var(--mono);color:var(--muted)}
+.horario-icone{font-size:23px;display:block;margin:13px 0 7px}
+.horario-temperatura{font:700 25px/.95 var(--display)}
+.horario-condicao{font-size:9px;color:var(--muted);margin-top:8px}
+.loading-state,.error-state{grid-column:1/-1;padding:24px;background:#f6f8ff;color:var(--muted);font-size:12px}
+.error-state{color:#9c4037;border-left:3px solid #d96a4b}
+.source-note{font-size:8px;color:var(--muted);padding:25px 0 19px}.source-note>span{color:#d96a4b}.source-separator{padding:0 8px;color:#a5b6d1}
+.footer{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:17px;color:var(--muted);font-size:8px}.footer b{font-weight:400;margin-left:8px}.footer-mark{color:#d96a4b;margin-left:7px}
+@media(max-width:650px){body{padding:14px 10px}.dashboard{padding:23px 18px;box-shadow:7px 7px 0 #34547a1a}.cabecalho{gap:11px;flex-wrap:wrap}.brand{width:39px;height:39px;font-size:23px}.cabecalho h1{font-size:27px}.titulo-pequeno{font-size:8px}.header-right{width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;margin-top:7px}.data{margin-top:0}.hero-weather{grid-template-columns:1fr;min-height:0;padding:30px 0 18px}.temperature{font-size:112px;margin:27px 0 13px}.weather-art{height:210px;margin-top:5px}.sun-halo{width:160px;height:160px}.sun-core{width:105px;height:105px}.cloud-one{right:13%;top:35px}.cloud-two{left:9%;bottom:35px}.metrics{grid-template-columns:1fr;gap:9px;padding:20px 0 30px}.metric{min-height:100px;padding:16px 18px}.metric-value{margin-top:12px;font-size:34px}.metric-note{margin-top:4px}.forecast-heading{align-items:start;flex-direction:column}.forecast-hint{align-self:flex-end}.horarios{grid-auto-columns:105px}.footer{font-size:7px;flex-direction:column}.source-note{line-height:1.8}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}}
